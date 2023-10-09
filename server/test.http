@@ -1,0 +1,61 @@
+### Signup User and generate and set session token
+POST https://localhost:4000/signup
+Content-Type: application/json
+
+{
+"email": "TheLecturer@gmail.com",
+"password": "test_password",
+"username": "Le_Tester"
+}
+
+### Login User and generate and set session token
+
+POST https://localhost:4000/login
+Content-Type: application/json
+
+{
+"email": "TheLecturerTest@gmail.com",
+"password": "test_password"
+}
+
+### Home Page (Check Cookie token --> User Logged in?)
+
+POST https://localhost:4000/
+Content-Type: application/json
+
+{
+}
+
+### Logout User (Check that user is logged out, by running the previous test)
+
+GET https://localhost:4000/logout
+Content-Type: application/json
+
+{
+}
+
+###Post Page (Get All Posts)
+
+GET  https://localhost:4000/posts/
+Content-Type: application/json
+
+{
+}
+
+### Create a new post
+
+POST https://localhost:4000/posts/create
+Content-Type: application/json
+
+{
+"caption": "Test Post 5"
+}
+
+### Delete a post (By id)
+
+DELETE  https://localhost:4000/posts/delete
+Content-Type: application/json
+
+{
+"id": "652408312dd026f5a1440b73"
+}
