@@ -1,16 +1,16 @@
 ### Signup User and generate and set session token
-POST https://localhost:4000/signup
+POST https://localhost:4000/api/user/signup
 Content-Type: application/json
 
 {
-"email": "TheLecturer@gmail.com",
+"email": "TheTestingLecturer@gmail.com",
 "password": "test_password",
 "username": "Le_Tester"
 }
 
 ### Login User and generate and set session token
 
-POST https://localhost:4000/login
+POST https://localhost:4000/api/user/login
 Content-Type: application/json
 
 {
@@ -20,7 +20,7 @@ Content-Type: application/json
 
 ### Home Page (Check Cookie token --> User Logged in?)
 
-POST https://localhost:4000/
+POST https://localhost:4000/api/user/
 Content-Type: application/json
 
 {
@@ -28,7 +28,7 @@ Content-Type: application/json
 
 ### Logout User (Check that user is logged out, by running the previous test)
 
-GET https://localhost:4000/logout
+GET https://localhost:4000/api/user/logout
 Content-Type: application/json
 
 {
@@ -36,26 +36,25 @@ Content-Type: application/json
 
 ###Post Page (Get All Posts)
 
-GET  https://localhost:4000/posts/
+GET  https://localhost:4000/api/posts/
 Content-Type: application/json
 
 {
 }
 
-### Create a new post
+### Create a new post (You must be logged in first)
 
-POST https://localhost:4000/posts/create
+POST https://localhost:4000/api/posts/
 Content-Type: application/json
 
 {
-"caption": "Test Post 5"
+"caption": "Test Post 8"
 }
 
-### Delete a post (By id)
+### Delete a post (By id) format -> url/{Post ID} (You must be logged in first)
 
-DELETE  https://localhost:4000/posts/delete
-Content-Type: application/json
+DELETE  https://localhost:4000/api/posts/652408897bf14db6296b1f45
 
 {
-"id": "652408312dd026f5a1440b73"
+
 }

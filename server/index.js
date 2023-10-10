@@ -8,7 +8,7 @@ const fs = require("fs");
 require("dotenv").config();
 const cookieParser = require("cookie-parser");
 const authRoute = require("./Routes/AuthRoute");
-const postRoute = require("./Routes/PostRoute");
+const postRoute = require("./Controllers/PostController");
 const {MONGO_URL} = process.env;
 const port = 4000;
 
@@ -47,5 +47,5 @@ app.use(cookieParser());
 
 app.use(express.json());
 
-app.use("/", authRoute);
-app.use("/posts", postRoute)
+app.use("/api/user", authRoute);
+app.use('/api/posts', postRoute);

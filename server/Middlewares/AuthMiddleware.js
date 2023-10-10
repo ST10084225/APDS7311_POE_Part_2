@@ -12,8 +12,26 @@ module.exports.userVerification = (req, res) => {
      return res.json({ status: false })
     } else {
       const user = await User.findById(data.id)
-      if (user) return res.json({ status: true, user: user.username, token: token })
+      if (user) {
+        req.userId = user._id;
+        return res.json({ status: true, user: user.username, token: token })
+      }
       else return res.json({ status: false })
     }
   })
+};
+
+module.exports.checkAuth=(req,res,next)=>
+{
+    try{
+        const token = req.cookies.token;
+        jwt.verify(token,process.env.TOKEN_KEY)
+        next();
+    }
+    catch(error)
+    {
+        res.status(401).json({
+            message:"You must be logged in to perform this action"
+        });
+    }
 };

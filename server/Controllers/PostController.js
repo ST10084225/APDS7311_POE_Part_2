@@ -1,8 +1,10 @@
+const express = require('express')
+const router = express.Router();
 const Post = require('../Models/PostModel')
-const {checkAuthToken} = require('../util/SecretToken')
-const {userVerification} = require("../Middlewares/AuthMiddleware");
+const {checkAuth} = require("../Middlewares/AuthMiddleware")
+const {authorize, userVerification} = require("../Middlewares/AuthMiddleware");
 
-module.exports.GetPosts = async (req, res) =>{
+router.get('', (req,res)=> {
 try
 {
     //get posts
@@ -19,13 +21,14 @@ catch (error)
 {
     console.error(error); //catch error if failed
 }
-};
+});
 
-module.exports.CreatePost = async (req, res, next) =>{
+router.post('', checkAuth, async (req, res) =>{
 try
 {
     // Destructure request body
     const { caption, createdAt } = req.body;
+
 
     // Create post
     const post = await Post.create({ caption, createdAt });
@@ -35,21 +38,18 @@ try
         message: 'Post Created:',
         Post_Info: post   
     });
-    next();
 } 
 catch (error) 
 {
     console.error(error); //catch error if failed
 }
-};
+});
 
-module.exports.DeletePost = async (req, res) =>{
+router.delete('/:id', checkAuth, async (req, res)=>{
 try
 {  
-    // Destructure request body
-    const { id } = req.body;
     //Delete post based on post id
-   const deleted = await Post.findOneAndDelete({_id: id})
+   const deleted = await Post.findOneAndDelete({_id: req.params.id})
 
     if(deleted)
     {
@@ -65,4 +65,6 @@ catch (error)
 {
     console.error(error); //catch error if failed
 }
-};
+});
+
+module.exports = router
