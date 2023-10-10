@@ -1,4 +1,4 @@
-# APDS7311_POE_Part_2
+# ST10084225 APDS7311 POE Part 2
 A project that uses the MERN stack to achieve a secure sign up and login system, that also supports creating, deleting and viewing posts.
 
 # Testing the app
@@ -42,3 +42,4 @@ Email: sivan.moodley02@gmail.com
 Student Email: st10084225@vcconnect.edu.za
 APDS Class Discord Username: Noisyninja
 ```
+
