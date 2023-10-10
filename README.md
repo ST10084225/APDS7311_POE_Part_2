@@ -6,7 +6,7 @@ A project that uses the MERN stack to achieve a secure sign up and login system,
 ```
 Open a new terminal and run the following commands
 cd server
-npm init -y
+npm i
 npm start
 ```
 
@@ -21,7 +21,7 @@ Start the Server before starting the client
 Then open a new terminal and run the following commands
 cd client
 cd secure-login-client
-npm init -y
+npm i
 npm start
 ```
 #### Note: Only login, sign up, logout, and homepage have front-end implementations, there are no front-end pages for posts, yet.
