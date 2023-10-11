@@ -12,7 +12,9 @@ npm start
 
 ### Testing the Back-End
 ```
-Testing the back-end can be done through postman, or via the test.http rest client file i've added to the server folder. each request is commented with it's function.
+Testing the back-end can be done through postman,
+or via the test.http rest client file i've added to the server folder.
+each request is commented with it's function.
 ```
 
 ### Testing the Front-End
