@@ -35,7 +35,9 @@ mongodb+srv://st10084225:rZndWof9ejcBeXSm@cluster0.v2xiaa0.mongodb.net/test?retr
 
 ### Mongo Atlas Network Access
 ```
-Mongo has being whitelisted to all IP's, however if you experience any issues, contact me with the details below.
+Mongo has being whitelisted to all IP's,
+however if you experience any issues,
+contact me with the details below.
 ```
 
 ### Developer Contact Info
